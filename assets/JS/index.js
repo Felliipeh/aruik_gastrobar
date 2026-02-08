@@ -1,22 +1,18 @@
 async function copyLink() {
   const url = window.location.href;
-  const mensagem = `Confira todos os links oficiais do Aruik Gastrobar em um só lugar: ${url}`;
+  const mensagem = `Confira todos os links oficiais do Sandra Lanches em um só lugar: ${url}`;
 
-  if (navigator.share) {
-    try {
+  try {
+    if (navigator.share) {
       await navigator.share({
-        title: "Aruik Gastrobar | Links Oficiais",
+        title: "Sandra Lanches | Links Oficiais",
         text: mensagem
       });
-    } catch (err) {
-      console.error("Erro ao compartilhar:", err);
-    }
-  } else {
-    try {
+    } else {
       await navigator.clipboard.writeText(mensagem);
       alert("Link copiado com sucesso!");
-    } catch (err) {
-      alert("Não foi possível copiar o link.");
     }
+  } catch (err) {
+    console.error("Erro ao compartilhar:", err);
   }
 }
