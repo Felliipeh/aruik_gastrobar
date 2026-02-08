@@ -1,11 +1,11 @@
 async function copyLink() {
   const url = window.location.href;
-  const mensagem = `Confira todos os links oficiais do Sandra Lanches em um só lugar: ${url}`;
+  const mensagem = `Confira todos os links oficiais do Aruik Gastrobar em um só lugar: ${url}`;
 
   try {
     if (navigator.share) {
       await navigator.share({
-        title: "Sandra Lanches | Links Oficiais",
+        title: "Aruik Gastrobar | Links Oficiais",
         text: mensagem
       });
     } else {
